@@ -7,9 +7,7 @@ import { ThemeProvider } from "~/components/ui/theme-provider";
 // import Footer from "~/components/Footer";
 import NavBar from "~/components/NavBar";
 import { ClerkProvider } from "@clerk/nextjs";
-
-// sanity-plugin-markdown
-// import "easymde/dist/easymde.min.css";
+// import "easymde/dist/easymde.min.css";  // sanity-plugin-markdown
 
 // https://nextjs.org/learn/dashboard-app/adding-metadata
 export const metadata: Metadata = {
