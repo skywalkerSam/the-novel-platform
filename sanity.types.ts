@@ -30,6 +30,12 @@ export type Playlist = {
   }>;
 };
 
+export type Slug = {
+  _type: "slug";
+  current: string;
+  source?: string;
+};
+
 export type Feed = {
   _id: string;
   _type: "feed";
@@ -63,11 +69,13 @@ export type Blogpost = {
   slug: Slug;
   description: string;
   image?: string;
-  content?: string;
+  content?: Markdown;
   category?: string;
   views?: number;
   likes?: number;
 };
+
+export type Markdown = string;
 
 export type Author = {
   _id: string;
@@ -94,7 +102,21 @@ export type Author = {
   bio?: string;
 };
 
-export type Markdown = string;
+export type SanityImageCrop = {
+  _type: "sanity.imageCrop";
+  top: number;
+  bottom: number;
+  left: number;
+  right: number;
+};
+
+export type SanityImageHotspot = {
+  _type: "sanity.imageHotspot";
+  x: number;
+  y: number;
+  height: number;
+  width: number;
+};
 
 export type SanityImagePaletteSwatch = {
   _type: "sanity.imagePaletteSwatch";
@@ -122,20 +144,15 @@ export type SanityImageDimensions = {
   aspectRatio: number;
 };
 
-export type SanityImageHotspot = {
-  _type: "sanity.imageHotspot";
-  x: number;
-  y: number;
-  height: number;
-  width: number;
-};
-
-export type SanityImageCrop = {
-  _type: "sanity.imageCrop";
-  top: number;
-  bottom: number;
-  left: number;
-  right: number;
+export type SanityImageMetadata = {
+  _type: "sanity.imageMetadata";
+  location?: Geopoint;
+  dimensions?: SanityImageDimensions;
+  palette?: SanityImagePalette;
+  lqip?: string;
+  blurHash?: string;
+  hasAlpha?: boolean;
+  isOpaque?: boolean;
 };
 
 export type SanityFileAsset = {
@@ -158,6 +175,13 @@ export type SanityFileAsset = {
   path?: string;
   url?: string;
   source?: SanityAssetSourceData;
+};
+
+export type SanityAssetSourceData = {
+  _type: "sanity.assetSourceData";
+  name?: string;
+  id?: string;
+  url?: string;
 };
 
 export type SanityImageAsset = {
@@ -183,17 +207,6 @@ export type SanityImageAsset = {
   source?: SanityAssetSourceData;
 };
 
-export type SanityImageMetadata = {
-  _type: "sanity.imageMetadata";
-  location?: Geopoint;
-  dimensions?: SanityImageDimensions;
-  palette?: SanityImagePalette;
-  lqip?: string;
-  blurHash?: string;
-  hasAlpha?: boolean;
-  isOpaque?: boolean;
-};
-
 export type Geopoint = {
   _type: "geopoint";
   lat?: number;
@@ -201,36 +214,23 @@ export type Geopoint = {
   alt?: number;
 };
 
-export type Slug = {
-  _type: "slug";
-  current: string;
-  source?: string;
-};
-
-export type SanityAssetSourceData = {
-  _type: "sanity.assetSourceData";
-  name?: string;
-  id?: string;
-  url?: string;
-};
-
 export type AllSanitySchemaTypes =
   | Playlist
+  | Slug
   | Feed
   | Blogpost
-  | Author
   | Markdown
+  | Author
+  | SanityImageCrop
+  | SanityImageHotspot
   | SanityImagePaletteSwatch
   | SanityImagePalette
   | SanityImageDimensions
-  | SanityImageHotspot
-  | SanityImageCrop
-  | SanityFileAsset
-  | SanityImageAsset
   | SanityImageMetadata
-  | Geopoint
-  | Slug
-  | SanityAssetSourceData;
+  | SanityFileAsset
+  | SanityAssetSourceData
+  | SanityImageAsset
+  | Geopoint;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: BLOGPOSTS_QUERY
@@ -327,7 +327,7 @@ export type BLOGPOST_BY_ID_QUERYResult = {
   description: string;
   category: string | null;
   image: string | null;
-  content: string | null;
+  content: Markdown | null;
 } | null;
 // Variable: BLOGPOST_VIEWS_QUERY
 // Query: *[_type == "blogpost" && _id == $id][0]{        _id, views    }
@@ -368,7 +368,7 @@ export type PLAYLIST_BY_SLUG_QUERYResult = {
     description: string;
     category: string | null;
     image: string | null;
-    content: string | null;
+    content: Markdown | null;
   }> | null;
 } | null;
 // Variable: AUTHOR_BY_GITHUB_ID_QUERY
