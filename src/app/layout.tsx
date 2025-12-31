@@ -2,14 +2,12 @@ import "~/styles/globals.css";
 
 import { type Metadata } from "next";
 import { Paprika } from "next/font/google";
-// import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "~/components/ui/theme-provider";
-// import Footer from "~/components/Footer";
 import NavBar from "~/components/NavBar";
 import { ClerkProvider } from "@clerk/nextjs";
-
-// sanity-plugin-markdown
-// import "easymde/dist/easymde.min.css";
+// import { SpeedInsights } from "@vercel/speed-insights/next";
+// import Footer from "~/components/Footer";
+// import "easymde/dist/easymde.min.css";  // sanity-plugin-markdown
 
 // https://nextjs.org/learn/dashboard-app/adding-metadata
 export const metadata: Metadata = {

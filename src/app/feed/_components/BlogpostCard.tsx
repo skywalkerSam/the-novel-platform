@@ -73,7 +73,7 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
               src={
                 typeof author?.image === "string"
                   ? author.image
-                  : "https://github.com/starboy-inc.png"
+                  : "https://avatars.githubusercontent.com/u/95934821?v=4"
               }
               // src={author?.image ?? "https://github.com/starboy-inc.png"}
               alt={author?.name ?? "Author"}
@@ -84,7 +84,7 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
           </Link>
         ) : (
           <img
-            src={"https://github.com/starboy-inc.png"}
+            src={"https://avatars.githubusercontent.com/u/203412260?v=4"}
             alt={"Author image"}
             width={48}
             height={48}
