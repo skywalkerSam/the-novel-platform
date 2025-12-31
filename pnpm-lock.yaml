@@ -53,11 +53,14 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      html-encoding-sniffer:
+        specifier: ^6.0.0
+        version: 6.0.0
       isomorphic-dompurify:
         specifier: ^2.32.0
         version: 2.35.0
       jsdom:
-        specifier: ^27.2.0
+        specifier: ^27.4.0
         version: 27.4.0
       lucide-react:
         specifier: ^0.487.0
