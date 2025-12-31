@@ -34,9 +34,7 @@
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
-    "html-encoding-sniffer": "^6.0.0",
     "isomorphic-dompurify": "^2.32.0",
-    "jsdom": "^27.4.0",
     "lucide-react": "^0.487.0",
     "markdown-it": "^14.1.0",
     "next": "16.1.1",
@@ -75,6 +73,8 @@
   "packageManager": "pnpm@10.27.0",
   "overrides": {
     "react": "$react",
-    "react-dom": "$react-dom"
+    "react-dom": "$react-dom",
+    "html-encoding-sniffer": "^6.0.0",
+    "jsdom": "^27.4.0"
   }
 }

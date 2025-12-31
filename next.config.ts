@@ -27,16 +27,6 @@ const nextConfig: NextConfig = {
 
   typescript: { ignoreBuildErrors: true },
   // eslint: { ignoreDuringBuilds: true },
-
-  // Fix: 500 | iSE
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      config.externals = config.externals || [];
-      config.externals.push({
-        "html-encoding-sniffer": "commonjs html-encoding-sniffer",
-      });
-    }
-  },
 };
 
 export default nextConfig;
