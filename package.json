@@ -1,6 +1,6 @@
 {
-  "name": "the-novel",
-  "version": "0.1.0",
+  "name": "the-novel-platform",
+  "version": "0.3.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -34,7 +34,6 @@
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
-    "isomorphic-dompurify": "^2.32.0",
     "lucide-react": "^0.487.0",
     "markdown-it": "^14.1.0",
     "next": "16.1.1",
@@ -73,8 +72,6 @@
   "packageManager": "pnpm@10.27.0",
   "overrides": {
     "react": "$react",
-    "react-dom": "$react-dom",
-    "html-encoding-sniffer": "^6.0.0",
-    "jsdom": "^27.4.0"
+    "react-dom": "$react-dom"
   }
 }

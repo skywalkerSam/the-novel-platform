@@ -10,7 +10,7 @@ import TheEye from "../_components/TheEye";
 // import { Skeleton } from "../../_components/Skeleton";
 // import { Button } from "~/components/ui/button";
 // import { useRouter } from "next/router";
-import DOMPurify from "isomorphic-dompurify";
+// import DOMPurify from "isomorphic-dompurify";
 
 export default async function BlogpostPage({
   params,
@@ -18,15 +18,13 @@ export default async function BlogpostPage({
   params: Promise<{ id: string }>;
 }) {
   const id = (await params).id;
-
   const post = await client.fetch(BLOGPOST_BY_ID_QUERY, { id });
-
   const md = MarkdownIt();
-  // const parsedContent = md.render(post?.content ?? "");
-  const rawContent = md.render(post?.content ?? "");
-  const parsedContent = DOMPurify.sanitize(rawContent, {
-    USE_PROFILES: { html: true },
-  });
+  const parsedContent = md.render(post?.content ?? "");
+  // const rawContent = md.render(post?.content ?? "");
+  // const parsedContent = DOMPurify.sanitize(rawContent, {
+  //   USE_PROFILES: { html: true },
+  // });
 
   // const router = useRouter();
 
