@@ -56,6 +56,9 @@ importers:
       isomorphic-dompurify:
         specifier: ^2.32.0
         version: 2.35.0
+      jsdom:
+        specifier: ^27.4.0
+        version: 27.4.0
       lucide-react:
         specifier: ^0.487.0
         version: 0.487.0(react@19.2.3)
