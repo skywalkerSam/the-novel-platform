@@ -9,7 +9,7 @@ export default function NavBar() {
     <>
       <SignedOut>
         <div className="justify-items-end">
-          <div className="hover:text-primary p-4">
+          <div className="hover:text-primary p-4 font-lg font-semibold">
             <SignInButton />
           </div>
         </div>

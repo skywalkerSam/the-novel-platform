@@ -32,7 +32,9 @@ export default async function BlogpostPage({
     <>
       <section className="flex items-center justify-center gap-4 p-4 md:p-8 lg:p-12">
         <div>
-          <h1 className="mt-6 mb-6 text-7xl font-paprika font-bold text-primary">{post?.title}</h1>
+          <h1 className="font-paprika hover:text-primary mt-6 mb-6 text-7xl font-bold">
+            {post?.title}
+          </h1>
           <p className="ml-4">{post?.description}</p>
         </div>
         {post?.image && (
@@ -64,7 +66,7 @@ export default async function BlogpostPage({
           </div>
           <div className="w-36 flex-none">
             <Link href={`/user/${post?.author?._id}`}>
-              <div className="mt-4 ml-2 hover:text-[var(--green)]">
+              <div className="hover:text-primary mt-4 ml-2">
                 <p>
                   <span>@</span>
                   {post?.author?.username ?? ""}
@@ -84,7 +86,7 @@ export default async function BlogpostPage({
         </div>
       </section>
 
-      <section className="flex items-center justify-center">
+      <section className="flex items-center justify-center font-paprika">
         {parsedContent ? (
           <article
             className="prose max-w-7xl break-all"
