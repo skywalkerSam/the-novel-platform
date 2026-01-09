@@ -9,13 +9,13 @@ export default function NavBar() {
     <>
       <SignedOut>
         <div className="justify-items-end">
-          <div className="hover:text-primary font-lg p-4 font-semibold">
+          <div className="hover:text-primary text-lg p-4 font-semibold">
             <SignInButton />
           </div>
         </div>
       </SignedOut>
       <SignedIn>
-        <nav className="min-w-screen bg-transparent">
+        <nav className="bg-transparent">
           {" "}
           <div className="mx-auto flex w-lg flex-wrap items-center justify-between p-4 md:w-xl lg:w-3xl xl:w-5xl">
             <Link
