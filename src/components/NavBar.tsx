@@ -9,26 +9,33 @@ export default function NavBar() {
     <>
       <SignedOut>
         <div className="justify-items-end">
-          <div className="hover:text-primary p-4">
+          <div className="hover:text-primary text-lg p-4 font-semibold">
             <SignInButton />
           </div>
         </div>
       </SignedOut>
       <SignedIn>
-        <nav className="w-screen bg-transparent">
+        <nav className="bg-transparent">
           {" "}
-          <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
+          <div className="mx-auto flex w-lg flex-wrap items-center justify-between p-4 md:w-xl lg:w-3xl xl:w-5xl">
             <Link
               href="/"
               className="flex items-center space-x-3 rtl:space-x-reverse"
-              // target="_blank"
-              // rel="noopener noreferrer"
             >
-              {/* <img src="/starboy.svg" className="h-8" alt="Starboy Logo" /> */}
-              <span className="hover:text-primary self-center text-2xl font-semibold whitespace-nowrap">
-                {" "}
-                The Novel
-              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="hover:text-primary size-9"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                />
+              </svg>
             </Link>
             <div className="flex items-center space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
               <UserButton></UserButton>
@@ -50,7 +57,7 @@ export default function NavBar() {
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
                       stroke="currentColor"
-                      className="size-6"
+                      className="size-7"
                     >
                       <path
                         strokeLinecap="round"
@@ -81,7 +88,7 @@ export default function NavBar() {
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
                       stroke="currentColor"
-                      className="size-6"
+                      className="size-7"
                     >
                       <path
                         strokeLinecap="round"

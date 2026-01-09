@@ -1,5 +1,7 @@
 import { BLOGPOSTS_QUERY } from "~/sanity/lib/queries";
-import BlogpostCard, { type BlogpostCardType } from "./_components/BlogpostCard";
+import BlogpostCard, {
+  type BlogpostCardType,
+} from "./_components/BlogpostCard";
 // import { client } from "~/sanity/lib/client";
 import Footer from "~/components/Footer";
 import { sanityFetch, SanityLive } from "~/sanity/lib/live";
@@ -27,7 +29,7 @@ export default async function UserFeed() {
   // ];
   return (
     <>
-      <main>
+      <main className="via-primary flex flex-col items-center bg-linear-to-b from-transparent to-transparent">
         <section className="section_container">
           <ul className="card_grid mt-7">
             {posts?.length > 0 ? (
