@@ -39,7 +39,7 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
             strokeWidth="1.5"
             stroke="currentColor"
             // stroke="black"
-            className="size-6 text-primary"
+            className="text-primary size-6"
           >
             <path
               strokeLinecap="round"
@@ -62,7 +62,9 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
             <p className="text-16-medium line-clamp-1">{author?.name}</p>
           </Link> */}
           <Link href={`/feed/blogpost/${_id}`}>
-            <h3 className="text-26-semibold text-primary font-paprika">{title}</h3>{" "}
+            <h3 className="text-26-semibold hover:text-primary font-paprika">
+              {title}
+            </h3>{" "}
             {/* line-clamp-1 */}
           </Link>
         </div>
