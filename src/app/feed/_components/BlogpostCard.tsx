@@ -26,20 +26,20 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
   return (
     <li className="blogpost-card group">
       <div className="flex-between">
-        <p className="blogpost-card_date text-black">
+        <p className="blogpost-card_date">
           {_createdAt ? formatDate(_createdAt) : "—"}
         </p>
-        {/* <p className="blogpost-card_date text-black">{formatDate(_createdAt)}</p> */}
+        {/* <p className="blogpost-card_date ">{formatDate(_createdAt)}</p> */}
         <div className="flex gap-1">
-          {/* <EyeIcon className="size-6 text-black" /> */}
+          {/* <EyeIcon className="size-6 " /> */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth="1.5"
-            // stroke="currentColor"
-            stroke="black"
-            className="size-6"
+            stroke="currentColor"
+            // stroke="black"
+            className="size-6 text-primary"
           >
             <path
               strokeLinecap="round"
@@ -62,12 +62,12 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
             <p className="text-16-medium line-clamp-1">{author?.name}</p>
           </Link> */}
           <Link href={`/feed/blogpost/${_id}`}>
-            <h3 className="text-26-semibold text-primary">{title}</h3>{" "}
+            <h3 className="text-26-semibold text-primary font-paprika">{title}</h3>{" "}
             {/* line-clamp-1 */}
           </Link>
         </div>
         {author?._id ? (
-            <Link href={`/feed}`}>
+          <Link href={`/feed}`}>
             {/*<Link href={`/author/${author?._id}`}>*/}
             <img
               src={
@@ -118,7 +118,7 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
           <Link
             href={`/search?query=${encodeURIComponent(category.toLowerCase())}`}
           >
-            <p className="text-16-medium">{category}</p>
+            <p className="text-16-medium hover:underline">{category}</p>
           </Link>
         ) : (
           <span className="text-16-medium text-muted-foreground">
@@ -128,7 +128,7 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
         {/* <Link href={`/?query=${category?.toLowerCase()}`}>
           <p className="text-16-medium">{category}</p>
         </Link> */}
-        <Button className="blogpost-card_btn" asChild>
+        <Button variant={"ghost"} asChild>
           <Link href={`/feed/blogpost/${_id}`}>Details</Link>
         </Button>
       </div>

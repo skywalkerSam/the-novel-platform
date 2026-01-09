@@ -1,7 +1,6 @@
-import "~/styles/globals.css";
-
+import "./globals.css";
+import { Geist, Geist_Mono, Figtree, Paprika } from "next/font/google";
 import { type Metadata } from "next";
-import { Paprika } from "next/font/google";
 import { ThemeProvider } from "~/components/ui/theme-provider";
 import NavBar from "~/components/NavBar";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -20,21 +19,36 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
 const paprika = Paprika({
+  variable: "--font-paprika",
   subsets: ["latin"],
   weight: "400",
-  style: "normal",
 });
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${paprika.className} antialiased`}>
+    <html lang="en" suppressHydrationWarning className={figtree.variable}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${paprika.variable} antialiased`}
+      >
+        {/* <body className={`${paprika.className} antialiased`}> */}
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >

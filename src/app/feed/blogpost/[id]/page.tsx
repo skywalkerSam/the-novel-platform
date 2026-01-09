@@ -32,7 +32,7 @@ export default async function BlogpostPage({
     <>
       <section className="flex items-center justify-center gap-4 p-4 md:p-8 lg:p-12">
         <div>
-          <h1 className="mt-6 mb-6 text-7xl font-semibold">{post?.title}</h1>
+          <h1 className="mt-6 mb-6 text-7xl font-paprika font-bold text-primary">{post?.title}</h1>
           <p className="ml-4">{post?.description}</p>
         </div>
         {post?.image && (
@@ -95,35 +95,20 @@ export default async function BlogpostPage({
         )}
       </section>
 
-      <div className="flex-between p-4">
+      <div className="flex-between m-4 p-4">
         {/* <p className="py-2 text-2xl font-semibold">Categories...</p> */}
         {post?.category ? (
           <Link
             href={`/search?query=${encodeURIComponent(post?.category.toLowerCase())}`}
           >
-            <p className="border-accent-foreground hover:border-accent-[var(--green)] rounded-full border-2 p-2 font-semibold hover:text-[var(--green)] hover:underline">
+            <p className="border-accent-foreground hover:text-primary rounded-full border-2 p-2 font-semibold hover:underline">
               {post?.category}
             </p>
           </Link>
         ) : (
-          // <Button
-          //   variant={"default"}
-          //   className="rounded-full"
-          //   onClick={() =>
-          //     router.push(
-          //       `/search?query=${encodeURIComponent(post?.category?.toLowerCase() ?? "")}`,
-          //     )
-          //   }
-          // >
-          //   {post?.category}
-          // </Button>
-          <p>Uncategorized.(</p>
+          <p className="text-red-500">Uncategorized.(</p>
         )}
         <TheEye id={id}></TheEye>
-
-        {/* <Suspense fallback={<Skeleton className="view_skeleton"></Skeleton>}>
-          <TheEye id={id}></TheEye>
-        </Suspense> */}
       </div>
 
       <Footer></Footer>

@@ -27,14 +27,14 @@ export default async function SearchPage({
 
   return (
     <>
-      <main>
+      <main className="via-primary flex flex-col items-center bg-linear-to-b from-transparent to-transparent">
         <div className="mt-10 flex items-center justify-center">
           <SearchForm query={searchQuery}></SearchForm>
         </div>
         <section className="section_container">
           <div className="mt-10 mb-10">
             {searchQuery ? `Search results for "${searchQuery}"` : ""}
-            
+
             {/* {query
               ? Array.isArray(query)
                 ? `Search results for "${query.join(", ")}"`

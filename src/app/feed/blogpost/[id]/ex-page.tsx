@@ -70,7 +70,7 @@
 //
 //               <div>
 //                 <p className="text-20-medium">{post?.author.name}</p>
-//                 <p className="text-16-medium !text-black-300">
+//                 <p className="text-16-medium !-300">
 //                   @{post?.author.username}
 //                 </p>
 //               </div>
